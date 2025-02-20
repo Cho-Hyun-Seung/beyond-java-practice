@@ -10,21 +10,21 @@ public class Application2 {
         Scanner sc = new Scanner(System.in);
 
 //      길이 4의 정수 배열을 만들고 각 인덱스에는 0 ~ 9까지의 중복되지 않는 난수를 저장한다.
-        int[] arr = new int[4];
         int count = 10;
+        int[] arr = new int[4];
+
         Random random = new Random();
-        for(int i = 0; i < arr.length; i++){
-            label:
-            while(true){
-                int ranNum = random.nextInt(9);
-                for(int j =0; j < i; j++){
-                    if(ranNum == arr[j]){
-                        continue label;
-                    }
-                }
-                arr[i] = ranNum;
-                break;
+
+        int index = 0;
+
+        label:
+        while(index < arr.length){
+            int ranNum = random.nextInt(7) + 1;
+            for(int i = 0; i < index; i ++){
+                if(arr[i] == ranNum) continue label;
             }
+            arr[index] = ranNum;
+            index +=1;
         }
         System.out.println(Arrays.toString(arr));
         while(true){
@@ -34,7 +34,7 @@ public class Application2 {
                 break;
             }
             System.out.println(count + "회 남으셨습니다.");
-            System.out.println("4자리 숫자를 입력하세요 : ");
+            System.out.print("4자리 숫자를 입력하세요 : ");
             int inputNum = sc.nextInt();
     //       또한 4자리의 정수를 입력하지 않은 경우에는 "4자리의 정수를 입력해야 합니다." 출력 후 입력을 다시 받을 수 있되
     //       횟수는 차감하지 않는다.

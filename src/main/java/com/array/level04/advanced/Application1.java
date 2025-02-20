@@ -8,6 +8,7 @@ public class Application1 {
     public static void main(String[] args) {
         int[] arr = new int[6];
         Random random = new Random();
+        // XXX : 3중 for문???????
         for(int i = 0; i < arr.length; i++){
             label:
             while(true){
